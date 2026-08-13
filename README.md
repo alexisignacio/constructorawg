@@ -99,7 +99,7 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 Use these settings when importing this repository into Cloudflare Pages:
 
-- Build command: `npm run build:pages`
+- Build command: `npm run build`
 - Build output directory: `dist-pages`
 
 ## Learn More
