@@ -91,8 +91,16 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 
 - `npm run dev`: start local development
 - `npm run build`: verify the vinext build output
+- `npm run build:pages`: create the static Cloudflare Pages output in `dist-pages`
 - `npm test`: build the starter and verify its rendered loading skeleton
 - `npm run db:generate`: generate Drizzle migrations after schema changes
+
+## Cloudflare Pages
+
+Use these settings when importing this repository into Cloudflare Pages:
+
+- Build command: `npm run build:pages`
+- Build output directory: `dist-pages`
 
 ## Learn More
 
