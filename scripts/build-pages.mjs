@@ -39,5 +39,6 @@ await mkdir(distPages, { recursive: true });
 await cp(distClient, distPages, { recursive: true });
 await writeFile(resolve(distPages, "index.html"), await renderHome());
 await rm(resolve(root, "dist/server/wrangler.json"), { force: true });
+await rm(resolve(root, ".wrangler/deploy/config.json"), { force: true });
 
 console.log("Cloudflare Pages static output written to dist-pages");
