@@ -135,12 +135,13 @@ p {
 
 h1 {
   color: var(--forest);
-  font-size: clamp(3.15rem, 8vw, 7.5rem);
+  font-size: clamp(2.6rem, 6.2vw, 6.2rem);
   font-weight: 900;
   letter-spacing: 0;
-  line-height: 0.92;
+  line-height: 0.98;
   margin-bottom: 26px;
-  overflow-wrap: anywhere;
+  max-width: 920px;
+  overflow-wrap: normal;
 }
 
 h2 {
@@ -206,15 +207,37 @@ h3 {
 
 .hero-visual {
   align-self: stretch;
+  background:
+    radial-gradient(
+      circle at 68% 52%,
+      color-mix(in srgb, var(--paper) 76%, transparent),
+      color-mix(in srgb, var(--background) 94%, transparent) 66%,
+      var(--background) 100%
+    );
   min-height: 420px;
   overflow: hidden;
   position: relative;
 }
 
+.hero-visual::after {
+  background:
+    linear-gradient(90deg, var(--background), transparent 18%),
+    linear-gradient(270deg, var(--background), transparent 10%),
+    linear-gradient(0deg, var(--background), transparent 12%),
+    linear-gradient(180deg, var(--background), transparent 12%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
 .hero-visual img {
+  filter: contrast(1.05) saturate(0.85);
   height: 100%;
+  mix-blend-mode: multiply;
   object-fit: cover;
   object-position: center;
+  opacity: 0.92;
   width: 100%;
 }
 
@@ -266,8 +289,11 @@ h3 {
 }
 
 .section-copy p:last-child,
+.statement-stack p:last-child,
+.integrity-panel p:last-child,
 .mission-vision p:last-child,
 .territory p:last-child,
+.contact-list p:last-child,
 .closing p:last-child {
   margin-bottom: 0;
 }
@@ -288,12 +314,20 @@ h3 {
 }
 
 .capability-card,
-.tender-panel {
+.tender-panel,
+.integrity-panel,
+.work-card,
+.contact-form {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
-  min-height: 220px;
   padding: 24px;
+}
+
+.capability-card,
+.tender-panel,
+.integrity-panel {
+  min-height: 220px;
 }
 
 .card-rule {
@@ -306,10 +340,104 @@ h3 {
 
 .capability-card p,
 .tender-panel li,
+.integrity-panel li,
+.integrity-panel p,
+.work-card p,
 .territory p,
+.contact-list p,
 .closing p {
   color: var(--muted);
   line-height: 1.65;
+}
+
+.statement-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.statement-stack article {
+  border-left: 4px solid var(--copper);
+  padding-left: 24px;
+}
+
+.statement-stack p {
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.integrity-layout,
+.contact-section {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  margin-top: 34px;
+}
+
+.accent-panel {
+  background: var(--forest);
+  color: #fffdf8;
+}
+
+.accent-panel h3 {
+  color: #fffdf8;
+}
+
+.accent-panel p {
+  color: color-mix(in srgb, #fff 76%, transparent);
+}
+
+.light-action {
+  border-color: #fffdf8;
+  color: #fffdf8;
+  margin-top: 12px;
+}
+
+.text-link {
+  border-bottom: 1px solid color-mix(in srgb, #fff 44%, transparent);
+  color: color-mix(in srgb, #fff 78%, transparent);
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.works-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 34px;
+}
+
+.work-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.work-photo {
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--forest) 70%, transparent),
+      color-mix(in srgb, var(--copper) 35%, transparent)
+    ),
+    url("/og.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.work-body {
+  padding: 22px;
+}
+
+.work-body span {
+  color: var(--copper);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 850;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .mission-vision {
@@ -363,6 +491,21 @@ h3 {
   font-size: 1.08rem;
 }
 
+.coverage-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.coverage-list span {
+  border: 1px solid color-mix(in srgb, #fff 34%, transparent);
+  color: #fffdf8;
+  font-size: 0.92rem;
+  font-weight: 800;
+  padding: 10px 14px;
+}
+
 .tender-layout {
   display: grid;
   gap: 18px;
@@ -377,6 +520,77 @@ h3 {
   list-style: none;
   margin: 18px 0 0;
   padding: 0;
+}
+
+.service-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-section {
+  align-items: start;
+  margin-top: 0;
+}
+
+.contact-list {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+  margin-top: 28px;
+  padding-top: 24px;
+}
+
+.contact-list strong {
+  color: var(--forest);
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-form label {
+  color: var(--forest);
+  display: grid;
+  font-size: 0.9rem;
+  font-weight: 800;
+  gap: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ink);
+  font: inherit;
+  padding: 13px 14px;
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--forest);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--copper) 18%, transparent);
+  outline: none;
+}
+
+.contact-form button {
+  background: var(--forest);
+  border: 1px solid var(--forest);
+  color: #fffdf8;
+  cursor: default;
+  font: inherit;
+  font-weight: 850;
+  min-height: 48px;
+  padding: 13px 18px;
+}
+
+[aria-disabled="true"] {
+  cursor: not-allowed;
 }
 
 .check-list li,
@@ -424,7 +638,9 @@ h3 {
   .hero,
   .two-column,
   .mission-vision,
-  .tender-layout {
+  .tender-layout,
+  .integrity-layout,
+  .contact-section {
     grid-template-columns: 1fr;
   }
 
@@ -437,7 +653,9 @@ h3 {
   }
 
   .metrics,
-  .capability-grid {
+  .capability-grid,
+  .works-grid,
+  .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -469,7 +687,7 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(2.55rem, 16vw, 4.4rem);
+    font-size: clamp(2.35rem, 12vw, 3.9rem);
   }
 
   .hero-actions a {
@@ -481,7 +699,9 @@ h3 {
   }
 
   .metrics,
-  .capability-grid {
+  .capability-grid,
+  .works-grid,
+  .service-grid {
     grid-template-columns: 1fr;
   }
 

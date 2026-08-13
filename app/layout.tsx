@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WALTER A. GARRIDO RÍOS | Obras civiles e infraestructura",
+  title: "Construcción y Obras Civiles en Malleco | WALTER A. GARRIDO RÍOS",
   description:
-    "Constructora de Angol con tres décadas de experiencia local en obras civiles de infraestructura para licitaciones públicas y privadas.",
+    "Constructora de Angol con 30 años de trayectoria en obras civiles, infraestructura pública y privada, programa de integridad y cobertura en Malleco.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "WALTER A. GARRIDO RÍOS",
     description:
-      "Obras civiles e infraestructura con experiencia local en Angol y Malleco.",
+      "Construcción y obras civiles con 30 años de trayectoria en Malleco.",
     images: [
       {
         url: "/og.png",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "WALTER A. GARRIDO RÍOS",
     description:
-      "Constructora de obras civiles e infraestructura en Angol y Malleco.",
+      "Construcción y obras civiles con 30 años de trayectoria en Malleco.",
     images: ["/og.png"],
   },
 };

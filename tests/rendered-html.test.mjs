@@ -32,10 +32,13 @@ test("server-renders the construction company landing page", async () => {
 
   const html = await response.text();
   assert.match(html, /WALTER A\. GARRIDO RÍOS/i);
-  assert.match(html, /Constructora de obras civiles/i);
-  assert.match(html, /Tres décadas de experiencia local/i);
+  assert.match(html, /Construcción y Obras Civiles con 30 Años/i);
+  assert.match(html, /Programa de Integridad/i);
+  assert.match(html, /Ética, transparencia y cumplimiento normativo/i);
+  assert.match(html, /Últimos Trabajos Realizados/i);
+  assert.match(html, /Servicios y Capacidades/i);
+  assert.match(html, /Contacto y Ubicación/i);
   assert.match(html, /Angol, Renaico, Los Sauces/i);
-  assert.match(html, /Postulación a licitaciones/i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site/i);
 });
 
@@ -47,7 +50,9 @@ test("removes starter preview files and metadata", async () => {
   ]);
 
   assert.match(page, /WALTER A\. GARRIDO RÍOS/);
-  assert.match(layout, /Obras civiles e infraestructura/);
+  assert.match(page, /integrityPrinciples/);
+  assert.match(page, /recentWorks/);
+  assert.match(layout, /Construcción y Obras Civiles en Malleco/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.doesNotMatch(page, /SkeletonPreview|codex-preview/);
   assert.doesNotMatch(layout, /Starter Project|codex-preview|_sites-preview/);
