@@ -1,6 +1,7 @@
 import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
+import "./patch-local-headers.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const distClient = resolve(root, "dist/client");

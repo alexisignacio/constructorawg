@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
+import "../scripts/patch-local-headers.mjs";
 
 const templateRoot = new URL("../", import.meta.url);
 
@@ -34,6 +35,7 @@ test("server-renders the construction company landing page", async () => {
   assert.match(html, /WALTER A\. GARRIDO RÍOS/i);
   assert.match(html, /Construcción y Obras Civiles con 30 Años/i);
   assert.match(html, /Programa de Integridad/i);
+  assert.match(html, /href=\"\/docs\/Programa_Integridad_2026\.pdf\"/i);
   assert.match(html, /Ética, transparencia y cumplimiento normativo/i);
   assert.match(html, /Últimos Trabajos Realizados/i);
   assert.match(html, /Servicios y Capacidades/i);

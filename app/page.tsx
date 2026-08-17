@@ -152,17 +152,27 @@ export default function Home() {
             </ul>
           </article>
           <article className="integrity-panel accent-panel">
-            <h3>Canal de integridad</h3>
+            <p className="panel-kicker">Canal y documentación</p>
+            <h3>Programa de Integridad 2026</h3>
             <p>
-              Espacio reservado para denuncias, consultas o reportes vinculados
-              a ética, conflictos de interés, transparencia y cumplimiento.
+              Consulta el programa vigente y utiliza este canal para denuncias,
+              consultas o reportes vinculados a ética, conflictos de interés,
+              transparencia y cumplimiento.
             </p>
-            <a className="secondary-action light-action" href="#contacto">
-              Consultas de integridad
-            </a>
-            <a className="text-link" href="#integridad" aria-disabled="true">
-              PDF del programa por incorporar
-            </a>
+            <div className="integrity-actions" aria-label="Acciones del programa de integridad">
+              <a className="secondary-action light-action" href="#contacto">
+                Consultas de integridad
+              </a>
+              <a
+                className="secondary-action document-action"
+                href="/docs/Programa_Integridad_2026.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Descargar PDF
+              </a>
+            </div>
+            <p className="document-note">Programa_Integridad_2026.pdf</p>
           </article>
         </div>
       </section>
