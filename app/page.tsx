@@ -180,7 +180,7 @@ export default function Home() {
       <section className="section" id="trabajos">
         <div className="section-heading">
           <p className="eyebrow">Últimos Trabajos Realizados</p>
-          <h2>Registro inicial de obras para completar con antecedentes y fotografías.</h2>
+          <h2>Últimos trabajos realizados y antecedentes técnicos de respaldo.</h2>
         </div>
         <div className="works-grid">
           {recentWorks.map((work) => (
